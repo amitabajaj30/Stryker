@@ -142,8 +142,7 @@ def predict():
       
        output = "{:.2f}".format(p.Label[0])
        
-       fig = px.line(final_df,x="date", y=['Label','DowntimeInHours'], title=title , template = 'plotly_dark')
-       fig.show() 
+       
        return render_template('home1.html',pred= 'Machine {} on {} in shift {} due to {} state will be down for {} Hrs '.format(machine,date,Shift,DowntimeDesctiption,output))
 
 
