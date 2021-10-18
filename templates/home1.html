@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Styker TimeSeries Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+<img align="left" src="{{ url_for('static', filename='/stryker.png') }}", width=200px, height = auto >
+<img align="right" src="{{ url_for('static', filename='/yash.png') }}" width=200px, height = auto>
+</head>
+
+<body>
+
+
+
+ <div class="login">
+	<h1>Stryker Predictions</h1>
+
+	
+	
+<br>
+     <!-- Form to enter new data for predictions  -->
+     
+    <form action="{{ url_for('predict')}}"method="POST">
+    
+    <br>
+    
+     
+     <select class ="dropdown" name="machine" id="machine" required>
+  
+      
+                               <option value="Facility/Machine">Facility/Machine</option>
+                              
+                                <optgroup label="Kalamazoo:">
+                                <option value="148-NTX">148-NTX</option>
+                                <option value="152-NTX">152-NTX</option>
+                                <option value="161-NTX">161-NTX</option>
+                                <option value="162-NTX">162-NTX</option>
+                                <option value="169-NZX">169-NZX</option>
+                                <option value="170-NZX">170-NZX</option>
+                                <option value="174-NZX">174-NZX</option>
+                                <option value="186-NTX">186-NTX</option>
+                                <option value="187-NTX">187-NTX</option>
+                                <option value="197-NTX">197-NTX</option>
+                                <option value="201-NZX">201-NZX</option>
+                                
+                                </optgroup>
+                                
+                                <optgroup label="Limerick:">
+                                <option value="903030">903030</option>
+                                <option value="901850">901850</option> 
+                                </optgroup>
+                                <optgroup label="SpringHill:">
+                                <option value="IBL-ER004">IBL-ER004</option>
+                                <option value="IBL-TG008">IBL-TG008</option>
+                                <option value="IBL-TG024">IBL-TG024</option>
+                                <option value="IBU-ST002">IBU-ST002</option>
+                                <option value="IBU-ST003">IBU-ST003</option>
+                                <option value="IBU-ST004">IBU-ST004</option>
+                                <option value="IBU-ST006">IBU-ST006</option>
+                                <option value="IBU-ST007">IBU-ST007</option>
+                                <option value="IBU-ST004">IBU-ST008</option>
+                            
+                                </optgroup>
+                               <optgroup label="Cary:">
+                               <option value="FF1">FF1</option>
+                               </optgroup>
+    </select><br>
+    
+    
+      
+      <select class = "dropdown" name="Shift" id="Shift" required>
+                                 <option value="Select a Shift">Shift</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                               
+                            </select><br>
+      <input type="date" name="date" id="date" required="required">
+      
+      
+      <select class = "dropdown" name="DowntimeDesctiption" id="DowntimeDesctiption" required>
+                                <option value="Select a Downtime Description">Downtime Description</option>
+                                <option value="ALARM">ALARM</option>
+                                <option value="IDLE">IDLE</option>
+                                <option value="SETUP">SETUP</option>
+                               
+                            </select><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  <br>
+  <br>
+  <br>     
+       
+
+
+</form>  
+   
+ </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br><br>
+  <br>
+  <br>
+  
+ <br> 
+ <div>
+
+<span class="highlight">{{pred}}</span>
+ </div>
+
+ 
+ </div>
+ 
+
+</body>
+
+        
+</html>
