@@ -9,10 +9,6 @@ import plotly.express as px
 
 app = Flask(__name__)
 
-#model = pickle.load(open("t_models/", "rb"))
-
-
-
 @app.route("/")
 
 def home():
@@ -138,11 +134,6 @@ def predict():
        score_df['date'] = all_dates
        score_df['time_series'] = time_series
        print(score_df)
-       
-
-       
-      
-      
        l = load_model('trained_models/' + str(time_series), verbose=False)
        p = predict_model(l, data=score_df)
        final_df = pd.merge(p, data, how = 'left', left_on=['date', 'time_series'], right_on = ['date', 'time_series'])
