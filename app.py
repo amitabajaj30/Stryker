@@ -116,7 +116,7 @@ def predict():
              Mcode = 23         
        title = 'Machine '+machine+'-'+'Shift '+Shift+'-'+'Downtime Description '+DowntimeDesctiption
        cols_1 = ['date','time_series']
-       data = pd.read_excel("C://Users//Naisha Bajaj//Desktop//Deployment//Stryker//converted.xlsx")
+       data = pd.read_excel("converted.xlsx")
        print(data)
        data['Mcode'] = ['Mcode_' + str(i) for i in data['Mcode']]
        data['Shift'] = ['Shift_' + str(i) for i in data['Shift']]
